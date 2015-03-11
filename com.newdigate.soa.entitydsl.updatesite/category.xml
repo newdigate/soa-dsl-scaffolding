@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/my.mavenized.herolanguage.sdk_0.0.0.jar" id="my.mavenized.herolanguage.sdk" version="0.0.0">
+      <category name="com.newdigate.soa.entitydsl"/>
+   </feature>
+   <category-def name="com.newdigate.soa.entitydsl" label="Service Oriented Architecture Entity Language"/>
+</site>
