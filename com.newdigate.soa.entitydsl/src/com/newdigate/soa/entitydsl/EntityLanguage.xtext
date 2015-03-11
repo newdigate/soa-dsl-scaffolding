@@ -1,0 +1,115 @@
+grammar com.newdigate.soa.entitydsl.EntityLanguage with org.eclipse.xtext.common.Terminals
+
+generate entityLanguage "http://www.newdigate.com/soa/entitydsl/EntityLanguage"
+
+EntityPackageDeclaration:
+	(abstract?='abstract')?
+	'package' name=QualifiedName 
+	(version=Version)?
+	'{'
+		(elements += AbstractElement)*
+  	'}'
+;
+
+QualifiedName:
+	ID ('.'ID)*
+;
+
+AbstractElement:
+	Import | Type;
+	
+Type:	
+	DataType | Entity | Enum | TypeDef;
+
+DataType:
+	'datatype' name=ID 
+	(dbType=STRING)?
+	('@dbspecial=' dbSpecialField=dbSpecial)?
+	';'?
+;
+
+enum dbSpecial:
+	none | idType | textType | dateTimeType | boolType | uuidType;
+
+Import:
+  'import' importedNamespace = QualifiedNameWithWildcard
+;
+
+QualifiedNameWithWildcard: QualifiedName '.*';
+
+Version:
+	major=INT ('.' minor=INT ('.' revision=INT ('.' iteration=INT)?)?)?
+;
+
+Entity:	
+	(isAbstract?='abstract')?
+	'entity' name=ID ('extends' superType=[Entity])? 
+	('{'
+		properties+=Property*
+	'}')?
+	(instanceTypes=EntityReturnTypes)?
+	(options=EntityOptions)?
+	;
+
+EntityReturnTypes:
+	'returns' '{' instances+=[Entity] (',' instances+=[Entity])* '}'
+;
+
+EntityOptions:
+	{EntityOptions} ('options' '{' options+=Option* '}')
+;
+
+Option:
+	('tableName' tableName=STRING) | 
+	('suffix' suffix=STRING) | 
+	('prefix' prefix=STRING) | 
+	('cached' cached=(BOOLEAN)) |
+	('revisionTables' revisionTables=(BOOLEAN))
+;
+
+enum BOOLEAN: True|False;
+
+Enum: 
+	'enumeration' name=ID '{'
+		literals+=EnumLiteral (',' literals+=EnumLiteral)*
+	'}'	
+;	
+
+EnumLiteral:
+	name+=ID ('=') value=INT;
+
+Property:
+	(modifier=PropertyModifier)? 
+	(unique='unique')?
+	(index='index')?
+	propertyType=PropertyType
+	name=ID ';';
+	
+PropertyType:
+	type=DataTypePropertyType | 'ref' entity=EntityPropertyType | 'enum' enumeration=EnumPropertyType | 'typedef' typeDefPropertyType=TypeDefPropertyType
+;
+DataTypePropertyType:
+	dataType=[DataType]
+;
+
+EntityPropertyType: entity=[Entity];
+
+EnumPropertyType:
+	enumeration=[Enum]
+;
+TypeDefPropertyType:
+	typeDef=[TypeDef]
+;
+TypeDef:
+	'typedef' name=ID '{'
+		properties+=TypeDefProperty*  	
+	'}'
+;
+
+TypeDefProperty:
+	(modifier=TypeDefPropertyModifier)? propertyType=PropertyType name=ID ';'?	
+;
+
+enum PropertyModifier: required | repeated | optional;	
+
+enum TypeDefPropertyModifier: required | optional;
