@@ -5,7 +5,7 @@ import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/com/newdigate/soa/entitydsl/EntityLanguage.xtext"
-var fileExtensions = "entity-spec"
+var fileExtensions = "entityspec"
 var projectName = "com.newdigate.soa.entitydsl"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
