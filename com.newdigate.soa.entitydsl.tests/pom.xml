@@ -3,16 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<relativePath>../my.mavenized.herolanguage.releng/pom.xml</relativePath>
-		<groupId>my.mavenized.herolanguage</groupId>
+		<relativePath>../pom.xml</relativePath>
+		<groupId>com.newdigate.soa.entitydsl</groupId>
 		<artifactId>parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>my.mavenized.herolanguage.tests</artifactId>
+	<artifactId>com.newdigate.soa.entitydsl.tests</artifactId>
 	<packaging>eclipse-test-plugin</packaging>
 
-	<name>My Hero Language Tests</name>
+	<name>SOADSL Entity Language Tests</name>
 
 	<build>
 		<plugins>
