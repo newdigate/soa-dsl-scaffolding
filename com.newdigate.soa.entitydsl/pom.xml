@@ -12,7 +12,7 @@
 	<artifactId>com.newdigate.soa.entitydsl</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
-	<name>Service Oriented Architecture EntityDSL Core</name>
+	<name>Service Oriented Architecture Entity Language Core</name>
 
 	<build>
 		<plugins>

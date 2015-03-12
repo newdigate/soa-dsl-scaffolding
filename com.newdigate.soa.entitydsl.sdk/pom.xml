@@ -12,5 +12,5 @@
   <artifactId>com.newdigate.soa.entitydsl.sdk</artifactId>
   <packaging>eclipse-feature</packaging>
 
-  <name>SOADSL Entity source code editor feature</name>
+  <name>Service Oriented Architecture Entity Language code editor feature</name>
 </project>

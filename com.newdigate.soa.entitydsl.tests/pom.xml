@@ -12,7 +12,7 @@
 	<artifactId>com.newdigate.soa.entitydsl.tests</artifactId>
 	<packaging>eclipse-test-plugin</packaging>
 
-	<name>SOADSL Entity Language Tests</name>
+	<name>Service Oriented Architecture Entity Language Tests</name>
 
 	<build>
 		<plugins>
