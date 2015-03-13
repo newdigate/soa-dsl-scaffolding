@@ -12,12 +12,16 @@ Require-Bundle: com.newdigate.soa.entitydsl;visibility:=reexport,
  org.eclipse.xtext.ui.shared,
  org.eclipse.ui,
  org.eclipse.xtext.builder,
- org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.compare
-Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+ org.eclipse.compare,
+ org.eclipse.xtext.xbase.ui,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.jdt.debug.ui
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: com.newdigate.soa.entitydsl.ui.quickfix,
  com.newdigate.soa.entitydsl.ui.contentassist,
  com.newdigate.soa.entitydsl.ui.internal,
