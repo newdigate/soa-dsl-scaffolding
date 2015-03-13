@@ -7,11 +7,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>com.newdigate.soa.entitydsl</module>
-		<module>com.newdigate.soa.entitydsl.ui</module>
-		<module>com.newdigate.soa.entitydsl.tests</module>
-		<module>com.newdigate.soa.entitydsl.sdk</module>
-		<module>com.newdigate.soa.entitydsl.updatesite</module>
+		<module>../com.newdigate.soa.entitydsl</module>
+		<module>../com.newdigate.soa.entitydsl.ui</module>
+		<module>../com.newdigate.soa.entitydsl.tests</module>
+		<module>../com.newdigate.soa.entitydsl.sdk</module>
+		<module>../com.newdigate.soa.entitydsl.updatesite</module>
 	</modules>
 
 	<properties>
