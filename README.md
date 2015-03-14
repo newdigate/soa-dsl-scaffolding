@@ -13,4 +13,4 @@
 * Apache Maven 3.1.1
 * Travis-ci.org
 
-(http://newdigate.github.io/soa-dsl-scaffolding/eclipse1.png "Screenshot of eclipse editor")
+[![Eclipse Editor Screenshot](http://newdigate.github.io/soa-dsl-scaffolding/eclipse1.png "Screenshot of eclipse editor")]
